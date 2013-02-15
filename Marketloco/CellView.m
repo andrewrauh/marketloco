@@ -9,5 +9,14 @@
 #import "CellView.h"
 
 @implementation CellView
+@synthesize myImage, myLabel;
+
+
+-(void)loadView{
+    //compare # lines of content, if so
+    //[self setFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)]
+    
+}
 
 @end
+

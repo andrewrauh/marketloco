@@ -13,4 +13,7 @@
     
 }
 
+@property (nonatomic, strong) IBOutlet UIImageView *myImage;
+@property (nonatomic, strong) IBOutlet UILabel *myLabel;
+
 @end
