@@ -18,7 +18,7 @@
     
     [Parse setApplicationId:@"n7e34KgerNawtVeTBH1VQPoMpCEmnvOgca2kxt8I"
                   clientKey:@"fC9nl2GW5V9CaEpkJ8v32a4SDXcvJCeeJ2FEVFIt"];
-    
+        
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     [testObject setObject:@"bar" forKey:@"foo"];
     [testObject save];

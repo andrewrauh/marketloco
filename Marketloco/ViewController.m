@@ -7,14 +7,19 @@
 //
 
 #import "ViewController.h"
+#import <Parse/Parse.h>
 
 @interface ViewController ()
+@property (nonatomic, strong) PFObject *myObject;
+@property (nonatomic, strong) PFQuery *mainQuery;
+@property (nonatomic, strong) NSArray *objectArray;
 
 @end
 
 @implementation ViewController
 @synthesize myTableView;
 @synthesize mainGridView;
+@synthesize mainQuery, myObject, objectArray;
 
 - (void)viewDidLoad
 {
@@ -30,7 +35,14 @@
     mainGridView.columnWidth = 256;
     mainGridView.pagingEnabled = YES;
     
-    [self.view addSubview:mainGridView];    
+    mainQuery = [PFQuery queryWithClassName:@"Listings"];
+    objectArray = [[NSArray alloc]initWithArray:[mainQuery findObjects]];
+    
+    for (PFObject *object in objectArray) {
+        NSLog(@"%@", [object objectForKey:@"title"]);
+    }
+    
+    [self.view addSubview:mainGridView];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
